@@ -42,6 +42,7 @@ jobs:
       - name: Run unit test
         run: npm test
   test-latest:
+    needs: test-14
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout source code"
