@@ -27,32 +27,32 @@ jobs:
   #       run: npm ci
   #     - name: Run unit test
   #       run: npm test
-  test-14:
+  test-1:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout source code"
         uses: actions/checkout@v3
-      - name: "Setup Node.js | Node Version: 14"
+      - name: "Setup Node.js"
         continue-on-error: true
         uses: actions/setup-node@v3
         with:
-          node-version: 14 
+          node-version: 16 
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
       - name: Run unit test
         run: npm test
-  test-latest:
-    needs: test-14
+  test-2:
+    needs: test-1
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout source code"
         uses: actions/checkout@v3
-      - name: "Setup Node.js | Node Version: latest"
+      - name: "Setup Node.js"
         continue-on-error: true
         uses: actions/setup-node@v3
         with:
-          node-version: latest 
+          node-version: 16 
       - name: Install dependencies
         run: npm ci
       - name: Run unit test
