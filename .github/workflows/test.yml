@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12, 14, 16, latest]
+        node-version: [14, 16, latest]
+      max-parallel: 1
     steps:
       - name: "Checkout source code"
         uses: actions/checkout@v3
