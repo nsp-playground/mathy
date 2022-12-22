@@ -15,3 +15,7 @@ jobs:
           path: |
             package.json
             README.md
+      - name: Download assets
+        uses: actions/download-artifact@v3
+        with:
+          name: assets
