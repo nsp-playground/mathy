@@ -12,10 +12,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      # - name: 'Setup Node.js | Node Version: 16'
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 16
+      - name: 'Setup Node.js | Node Version: 16'
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - name: Cache dependencies
         id: 'cache-deps'
         uses: actions/cache@v3
@@ -32,10 +32,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      # - name: 'Setup Node.js | Node Version: 16'
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 16
+      - name: 'Setup Node.js | Node Version: 16'
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
@@ -46,15 +46,15 @@ jobs:
       - name: Lint code
         run: npm run format
   test:
-    needs: 'lint'
+    needs: 'format'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      # - name: 'Setup Node.js | Node Version: 16'
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 16
+      - name: 'Setup Node.js | Node Version: 16'
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
