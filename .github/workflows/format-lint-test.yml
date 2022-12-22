@@ -27,6 +27,7 @@ jobs:
       - name: Lint code
         run: npm run format
   lint:
+    needs: 'format'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -45,6 +46,7 @@ jobs:
       - name: Lint code
         run: npm run format
   test:
+    needs: 'lint'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
