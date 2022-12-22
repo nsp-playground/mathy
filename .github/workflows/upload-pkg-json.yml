@@ -1,0 +1,15 @@
+name: Upload Package.json file
+
+on: [workflow_dispatch, push]
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Upload Package.json
+        uses: actions/upload-artifact@v3
+        with:
+          name: package.json
+          path: package.json
