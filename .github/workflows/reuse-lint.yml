@@ -1,21 +1,17 @@
 name: Run Linter
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
+on: workflow_call
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: 'Setup Node.js | Node Version: 16'
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
+      # - name: Checkout code
+      #   uses: actions/checkout@v3
+      # - name: 'Setup Node.js | Node Version: 16'
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 16
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
