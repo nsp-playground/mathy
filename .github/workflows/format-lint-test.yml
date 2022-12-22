@@ -17,12 +17,13 @@ jobs:
         with:
           node-version: 16
       - name: Cache dependencies
-        id: 'cache-deps'
+        id: cache-deps
         uses: actions/cache@v3
         with:
           path: ~/.npm
           key: "deps-node-modules-${{ hashFiles('**/package-lock.json') }}"
       - name: Install dependencies
+        if: steps.cache-deps.outputs.cache-hit != 'true'
         run: npm ci
       - name: Lint code
         run: npm run format
@@ -37,11 +38,13 @@ jobs:
         with:
           node-version: 16
       - name: Cache dependencies
+        id: cache-deps
         uses: actions/cache@v3
         with:
           path: ~/.npm
           key: "deps-node-modules-${{ hashFiles('**/package-lock.json') }}"
       - name: Install dependencies
+        if: steps.cache-deps.outputs.cache-hit != 'true'
         run: npm ci
       - name: Lint code
         run: npm run format
@@ -56,11 +59,13 @@ jobs:
         with:
           node-version: 16
       - name: Cache dependencies
+        id: cache-deps
         uses: actions/cache@v3
         with:
           path: ~/.npm
           key: "deps-node-modules-${{ hashFiles('**/package-lock.json') }}"
       - name: Install dependencies
+        if: steps.cache-deps.outputs.cache-hit != 'true'
         run: npm ci
       - name: Lint code
         run: npm run format
