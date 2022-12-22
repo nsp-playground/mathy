@@ -11,5 +11,6 @@ jobs:
       - name: Upload Package.json
         uses: actions/upload-artifact@v3
         with:
-          name: package.json
-          path: package.json
+          path: |
+            package.json
+            README.md
