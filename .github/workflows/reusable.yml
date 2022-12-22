@@ -1,0 +1,10 @@
+name: Reusable Lint and Test
+on: 'push'
+jobs:
+  reuse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Lint Workflow
+        uses: ./.github/workflows/reuse-lint.yml
+      - name: Run Test Workflow
+        uses: ./.github/workflows/reuse-test.yml
