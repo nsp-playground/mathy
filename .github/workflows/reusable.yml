@@ -7,6 +7,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Run Lint Workflow
-        uses: ./.github/workflows/reuse-lint.yml
+        uses: ./.github/actions/reuse-lint
       - name: Run Test Workflow
-        uses: ./.github/workflows/reuse-test.yml
+        uses: ./.github/actions/reuse-test
