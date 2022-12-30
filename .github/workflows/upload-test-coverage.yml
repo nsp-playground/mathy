@@ -1,6 +1,7 @@
 name: Report Test Coverage
 on:
   pull_request:
+    types: [open, reopened, synchronize, edited]
     branches:
       - main
 jobs:
@@ -21,4 +22,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: coverage
-          path: coverage/lcov-report/index.html
+          path: coverage
